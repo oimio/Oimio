@@ -2,6 +2,7 @@ package ch.amaba.model.bo;
 
 import java.util.Date;
 
+/** User DTO */
 public class UserDTO extends AbstractSignedDTO {
 
 	private static final long serialVersionUID = 1L;
@@ -48,8 +49,7 @@ public class UserDTO extends AbstractSignedDTO {
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result
-		    + ((dateNaissance == null) ? 0 : dateNaissance.hashCode());
+		result = prime * result + ((dateNaissance == null) ? 0 : dateNaissance.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((nom == null) ? 0 : nom.hashCode());
 		result = prime * result + ((prenom == null) ? 0 : prenom.hashCode());
