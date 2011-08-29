@@ -2,9 +2,18 @@ package ch.amaba.model.bo;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class SearchUserCriteria {
+
+	Integer idSexe;
+	Integer ageMin;
+	Integer ageMax;
+	List<Integer> idVilles;
+	List<Integer> idCantons;
+	List<Integer> idInterets;
+	List<Integer> idSports;
 
 	final HashMap<String, Set<String>> criteria;
 
