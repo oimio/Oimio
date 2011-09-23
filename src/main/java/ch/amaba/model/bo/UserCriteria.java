@@ -1,9 +1,15 @@
 package ch.amaba.model.bo;
 
 import java.util.Date;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import ch.amaba.model.bo.constants.TypeGenreEnum;
+import ch.amaba.model.bo.constants.TypeInteretEnum;
+import ch.amaba.model.bo.constants.TypeMusiqueEnum;
+import ch.amaba.model.bo.constants.TypeProfessionEnum;
+import ch.amaba.model.bo.constants.TypeReligionEnum;
+import ch.amaba.model.bo.constants.TypeSportEnum;
 
 public class UserCriteria {
 
@@ -14,11 +20,13 @@ public class UserCriteria {
 	Date dateNaissance;
 	Integer ageMin;
 	Integer ageMax;
-	List<Integer> idVilles;
-	List<Integer> idCantons;
-	List<Integer> idInterets;
-	List<Integer> idSports;
-	List<Integer> idProfessions;
+	Set<Integer> idVilles;
+	Set<Integer> idCantons;
+	Set<Integer> idInterets;
+	Set<Integer> idSports;
+	Set<Integer> idProfessions;
+	Set<Integer> idMusiques;
+	Set<Integer> idReligions;
 	PhysiqueCriteria physiqueCriteria;
 	ProfileCriteria profileCriteria;
 
@@ -123,43 +131,43 @@ public class UserCriteria {
 		this.ageMax = ageMax;
 	}
 
-	public List<Integer> getIdVilles() {
+	public Set<Integer> getIdVilles() {
 		return idVilles;
 	}
 
-	public void setIdVilles(List<Integer> idVilles) {
+	public void setIdVilles(Set<Integer> idVilles) {
 		this.idVilles = idVilles;
 	}
 
-	public List<Integer> getIdCantons() {
+	public Set<Integer> getIdCantons() {
 		return idCantons;
 	}
 
-	public void setIdCantons(List<Integer> idCantons) {
+	public void setIdCantons(Set<Integer> idCantons) {
 		this.idCantons = idCantons;
 	}
 
-	public List<Integer> getIdInterets() {
+	public Set<Integer> getIdInterets() {
 		return idInterets;
 	}
 
-	public void setIdInterets(List<Integer> idInterets) {
+	public void setIdInterets(Set<Integer> idInterets) {
 		this.idInterets = idInterets;
 	}
 
-	public List<Integer> getIdSports() {
+	public Set<Integer> getIdSports() {
 		return idSports;
 	}
 
-	public void setIdSports(List<Integer> idSports) {
+	public void setIdSports(Set<Integer> idSports) {
 		this.idSports = idSports;
 	}
 
-	public List<Integer> getIdProfessions() {
+	public Set<Integer> getIdProfessions() {
 		return idProfessions;
 	}
 
-	public void setIdProfessions(List<Integer> idProfessions) {
+	public void setIdProfessions(Set<Integer> idProfessions) {
 		this.idProfessions = idProfessions;
 	}
 
@@ -209,5 +217,71 @@ public class UserCriteria {
 
 	public void setDateNaissance(Date dateNaissance) {
 		this.dateNaissance = dateNaissance;
+	}
+
+	public Set<Integer> getIdMusiques() {
+		return idMusiques;
+	}
+
+	public void setIdMusiques(Set<Integer> idMusiques) {
+		this.idMusiques = idMusiques;
+	}
+
+	public Set<Integer> getIdReligions() {
+		return idReligions;
+	}
+
+	public void setIdReligions(Set<Integer> idReligions) {
+		this.idReligions = idReligions;
+	}
+
+	/**
+	 * Ajouter un nouveau filtre musique.
+	 * */
+	public void addMusique(TypeMusiqueEnum typeMusiqueEnum) {
+		if (idMusiques == null) {
+			idMusiques = new HashSet<Integer>();
+		}
+		idMusiques.add(typeMusiqueEnum.getId());
+	}
+
+	/**
+	 * Ajouter un nouveau filtre intérêt.
+	 * */
+	public void addInteret(final TypeInteretEnum typeInteretEnum) {
+		if (idInterets == null) {
+			idInterets = new HashSet<Integer>();
+		}
+		idInterets.add(typeInteretEnum.getId());
+	}
+
+	/**
+	 * Ajouter un nouveau filtre sport.
+	 * */
+	public void addSport(final TypeSportEnum typeSportEnum) {
+		if (idSports == null) {
+			idSports = new HashSet<Integer>();
+		}
+		idSports.add(typeSportEnum.getId());
+	}
+
+	/**
+	 * Ajouter un nouveau filtre religion.
+	 */
+	public void addReligion(final TypeReligionEnum typeReligionEnum) {
+		if (idReligions == null) {
+			idReligions = new HashSet<Integer>();
+		}
+		idReligions.add(typeReligionEnum.getId());
+	}
+
+	/**
+	 * Ajouter un nouveau filtre profession.
+	 */
+	public void addProfession(final TypeProfessionEnum typeProfessionEnum) {
+		if (idReligions == null) {
+			idReligions = new HashSet<Integer>();
+		}
+		idReligions.add(typeProfessionEnum.getId());
 	}
 }

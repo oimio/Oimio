@@ -1,27 +1,27 @@
 package ch.amaba.model.bo.constants;
 
 /**
- * Type enum pour un message.
+ * Type enum pour sport.
  * */
 public enum TypeSportEnum {
-	FOOT(1L), BASKET(2L), NATATION(3L), ESCALADE(4L), COURSE(5L), TENNIS(6L), EQUITATION(7L), VOLLEY(8L), VTT(9L), ROLLER(10L), DANSE(11L);
+	FOOT(1), BASKET(2), NATATION(3), ESCALADE(4), COURSE(5), TENNIS(6), EQUITATION(7), VOLLEY(8), VTT(9), ROLLER(10), DANSE(11);
 
 	/**
 	 * Id
 	 * */
-	private final Long id;
+	private final Integer id;
 
 	/**
 	 * Default constructor.
 	 * */
-	private TypeSportEnum(Long id) {
+	private TypeSportEnum(Integer id) {
 		this.id = id;
 	}
 
 	/**
 	 * Retourne l'identifiant unique
 	 * */
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 

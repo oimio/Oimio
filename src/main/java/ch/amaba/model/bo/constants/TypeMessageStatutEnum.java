@@ -4,23 +4,23 @@ package ch.amaba.model.bo.constants;
  * Type enum pour un message.
  * */
 public enum TypeMessageStatutEnum {
-	LU(2L), NON_LU(1L), ENVOYE(3L), SUPPRIME(4L);
+	NULL(0), NON_LU(1), LU(2), ENVOYE(3), SUPPRIME(4);
 	/**
 	 * Id
 	 * */
-	private final Long id;
+	private final Integer id;
 
 	/**
 	 * Default constructor.
 	 * */
-	private TypeMessageStatutEnum(Long id) {
+	private TypeMessageStatutEnum(Integer id) {
 		this.id = id;
 	}
 
 	/**
 	 * Retourne l'identifiant unique
 	 * */
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 

@@ -1,10 +1,10 @@
 package ch.amaba.model.bo.constants;
 
 /**
- * Type enum pour contact.
+ * Type enum pour religion.
  * */
-public enum TypeContactEnum {
-	MOBILE(1), GTALK(2), FIXE(3), SKYPE(4), MSN(5), FACEBOOK(6);
+public enum TypeReligionEnum {
+	CATHO(1), MUSULM(2), BOUDI(3), ATHE(4), PROTEST(5);
 
 	/**
 	 * Id
@@ -14,7 +14,7 @@ public enum TypeContactEnum {
 	/**
 	 * Default constructor.
 	 * */
-	private TypeContactEnum(Integer id) {
+	private TypeReligionEnum(Integer id) {
 		this.id = id;
 	}
 

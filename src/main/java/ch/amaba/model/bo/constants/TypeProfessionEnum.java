@@ -1,10 +1,10 @@
 package ch.amaba.model.bo.constants;
 
 /**
- * Type enum pour contact.
+ * Type enum pour profession.
  * */
-public enum TypeContactEnum {
-	MOBILE(1), GTALK(2), FIXE(3), SKYPE(4), MSN(5), FACEBOOK(6);
+public enum TypeProfessionEnum {
+	SANS(1), CADRE(2), FONCTION(3);
 
 	/**
 	 * Id
@@ -14,7 +14,7 @@ public enum TypeContactEnum {
 	/**
 	 * Default constructor.
 	 * */
-	private TypeContactEnum(Integer id) {
+	private TypeProfessionEnum(Integer id) {
 		this.id = id;
 	}
 

@@ -1,10 +1,10 @@
 package ch.amaba.model.bo.constants;
 
 /**
- * Type enum pour contact.
+ * Type enum pour musique.
  * */
-public enum TypeContactEnum {
-	MOBILE(1), GTALK(2), FIXE(3), SKYPE(4), MSN(5), FACEBOOK(6);
+public enum TypeMusiqueEnum {
+	POP(1), CLASSIC(2), RAP(3), RNB(4), REGGAE(5), TECHNO(6), ROCK(7), FUNCK(8), MONDE(9);
 
 	/**
 	 * Id
@@ -14,7 +14,7 @@ public enum TypeContactEnum {
 	/**
 	 * Default constructor.
 	 * */
-	private TypeContactEnum(Integer id) {
+	private TypeMusiqueEnum(Integer id) {
 		this.id = id;
 	}
 

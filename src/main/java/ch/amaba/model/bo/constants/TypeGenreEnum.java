@@ -1,27 +1,27 @@
 package ch.amaba.model.bo.constants;
 
 /**
- * Type enum pour un message.
+ * Type enum pour le genre.
  * */
 public enum TypeGenreEnum {
-	HETERO(1L), HOMO(2L), BI(3L);
+	HETERO(1), HOMO(2), BI(3);
 
 	/**
 	 * Id
 	 * */
-	private final Long id;
+	private final Integer id;
 
 	/**
 	 * Default constructor.
 	 * */
-	private TypeGenreEnum(Long id) {
+	private TypeGenreEnum(Integer id) {
 		this.id = id;
 	}
 
 	/**
 	 * Retourne l'identifiant unique
 	 * */
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
