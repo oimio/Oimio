@@ -1,5 +1,6 @@
 package ch.amaba.model.bo;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -11,7 +12,12 @@ import ch.amaba.model.bo.constants.TypeProfessionEnum;
 import ch.amaba.model.bo.constants.TypeReligionEnum;
 import ch.amaba.model.bo.constants.TypeSportEnum;
 
-public class UserCriteria {
+public class UserCriteria implements Serializable {
+
+	/**
+   * 
+   */
+	private static final long serialVersionUID = 1L;
 
 	Integer idSexe;
 	String nom;
@@ -30,8 +36,10 @@ public class UserCriteria {
 	PhysiqueCriteria physiqueCriteria;
 	ProfileCriteria profileCriteria;
 
+	/**
+	 * For serialization.
+	 * */
 	public UserCriteria() {
-
 	}
 
 	public static class ProfileCriteria {

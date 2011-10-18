@@ -4,7 +4,7 @@ package ch.amaba.model.bo.constants;
  * Type enum pour un message.
  * */
 public enum TypeMessageStatutEnum {
-	NULL(0), NON_LU(1), LU(2), ENVOYE(3), SUPPRIME(4);
+	NON_LU(1), LU(2), ENVOYE(3), SUPPRIME(4);
 	/**
 	 * Id
 	 * */
