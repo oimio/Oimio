@@ -5,7 +5,6 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-import ch.amaba.model.bo.constants.TypeGenreEnum;
 import ch.amaba.model.bo.constants.TypeInteretEnum;
 import ch.amaba.model.bo.constants.TypeMusiqueEnum;
 import ch.amaba.model.bo.constants.TypeProfessionEnum;
@@ -26,6 +25,8 @@ public class UserCriteria implements Serializable {
 	Date dateNaissance;
 	Integer ageMin;
 	Integer ageMax;
+	String password;
+	String ip;
 	Set<Integer> idVilles;
 	Set<Integer> idCantons;
 	Set<Integer> idInterets;
@@ -40,79 +41,6 @@ public class UserCriteria implements Serializable {
 	 * For serialization.
 	 * */
 	public UserCriteria() {
-	}
-
-	public static class ProfileCriteria {
-		TypeGenreEnum genre;
-		Boolean isMarie;
-		Boolean isDivorce;
-		Boolean isVeuf;
-		Boolean isRechercheRelationSerieuse;
-		Integer nombreEnfant;
-		// pas très clair
-		// null : ne sait pas,1 oui, 0 non
-		String codeSerieux;
-
-		public TypeGenreEnum getGenre() {
-			return genre;
-		}
-
-		public void setGenre(TypeGenreEnum genre) {
-			this.genre = genre;
-		}
-
-		public Boolean isMarie() {
-			return isMarie;
-		}
-
-		public void setMarie(Boolean isMarie) {
-			this.isMarie = isMarie;
-		}
-
-		public Boolean isDivorce() {
-			return isDivorce;
-		}
-
-		public void setDivorce(Boolean isDivorce) {
-			this.isDivorce = isDivorce;
-		}
-
-		public Boolean isVeuf() {
-			return isVeuf;
-		}
-
-		public void setVeuf(Boolean isVeuf) {
-			this.isVeuf = isVeuf;
-		}
-
-		public Boolean isRechercheRelationSerieuse() {
-			return isRechercheRelationSerieuse;
-		}
-
-		public void setRechercheRelationSerieuse(Boolean isRechercheRelationSerieuse) {
-			this.isRechercheRelationSerieuse = isRechercheRelationSerieuse;
-		}
-
-		public String getCodeSerieux() {
-			return codeSerieux;
-		}
-
-		public void setCodeSerieux(String codeSerieux) {
-			this.codeSerieux = codeSerieux;
-		}
-
-		public Integer getNombreEnfant() {
-			return nombreEnfant;
-		}
-
-		public void setNombreEnfant(Integer nombreEnfant) {
-			this.nombreEnfant = nombreEnfant;
-		}
-	}
-
-	public static class PhysiqueCriteria {
-		Integer poids;
-		Integer Taille;
 	}
 
 	public Integer getIdSexe() {
@@ -291,5 +219,21 @@ public class UserCriteria implements Serializable {
 			idReligions = new HashSet<Integer>();
 		}
 		idReligions.add(typeProfessionEnum.getId());
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getIp() {
+		return ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
 	}
 }
