@@ -9,7 +9,6 @@ import ch.amaba.model.bo.constants.TypeInteretEnum;
 import ch.amaba.model.bo.constants.TypeMusiqueEnum;
 import ch.amaba.model.bo.constants.TypeProfessionEnum;
 import ch.amaba.model.bo.constants.TypeReligionEnum;
-import ch.amaba.model.bo.constants.TypeSportEnum;
 
 public class UserCriteria implements Serializable {
 
@@ -18,6 +17,7 @@ public class UserCriteria implements Serializable {
    */
 	private static final long serialVersionUID = 1L;
 
+	Long idUser;
 	Integer idSexe;
 	String nom;
 	String prenom;
@@ -194,11 +194,11 @@ public class UserCriteria implements Serializable {
 	/**
 	 * Ajouter un nouveau filtre sport.
 	 * */
-	public void addSport(final TypeSportEnum typeSportEnum) {
+	public void addSport(final Integer idSport) {
 		if (idSports == null) {
 			idSports = new HashSet<Integer>();
 		}
-		idSports.add(typeSportEnum.getId());
+		idSports.add(idSport);
 	}
 
 	/**
@@ -235,5 +235,23 @@ public class UserCriteria implements Serializable {
 
 	public void setIp(String ip) {
 		this.ip = ip;
+	}
+
+	public Long getIdUser() {
+		return idUser;
+	}
+
+	public void setIdUser(Long idUser) {
+		this.idUser = idUser;
+	}
+
+	/**
+	 * Ajouter un nouveau filtre religion.
+	 */
+	public void addCanton(final Integer idCanton) {
+		if (idCantons == null) {
+			idCantons = new HashSet<Integer>();
+		}
+		idCantons.add(idCanton);
 	}
 }

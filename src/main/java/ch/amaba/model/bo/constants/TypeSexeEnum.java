@@ -3,25 +3,25 @@ package ch.amaba.model.bo.constants;
 /**
  * Type enum pour le genre.
  * */
-public enum TypeGenreEnum {
-	HETERO((short) 1), HOMO((short) 2), BI((short) 3);
+public enum TypeSexeEnum {
+	MASCULIN(1), FEMININ(2);
 
 	/**
 	 * Id
 	 * */
-	private final Short id;
+	private final Integer id;
 
 	/**
 	 * Default constructor.
 	 * */
-	private TypeGenreEnum(Short id) {
+	private TypeSexeEnum(Integer id) {
 		this.id = id;
 	}
 
 	/**
 	 * Retourne l'identifiant unique
 	 * */
-	public Short getId() {
+	public Integer getId() {
 		return id;
 	}
 

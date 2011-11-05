@@ -8,7 +8,10 @@ public enum TypeUserStatutEnum {
 	/**
 	 * L'email a été validé, attente de la validation admin manuelle.
 	 * */
-	WAIT(4);
+	WAIT(4),
+
+	/** Permet de plus apparaître dans la recherche. */
+	FURTIF(5);
 
 	/**
 	 * Id
