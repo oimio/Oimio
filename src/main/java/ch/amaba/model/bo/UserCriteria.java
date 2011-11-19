@@ -254,4 +254,5 @@ public class UserCriteria implements Serializable {
 		}
 		idCantons.add(idCanton);
 	}
+
 }
