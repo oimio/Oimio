@@ -4,7 +4,7 @@ package ch.amaba.model.bo.constants;
  * Type enum pour religion.
  * */
 public enum TypeReligionEnum {
-	CATHO(1), MUSULM(2), BOUDI(3), ATHE(4), PROTEST(5);
+	CATHO(1), MUSULM(2), BOUDI(3), ATHE(4), HIND(5), JUDAI(6), CONF(7);
 
 	/**
 	 * Id

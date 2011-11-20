@@ -4,7 +4,9 @@ package ch.amaba.model.bo.constants;
  * Type enum pour profession.
  * */
 public enum TypeProfessionEnum {
-	SANS(1), CADRE(2), FONCTION(3);
+	ACCUEIL(1), ACHAT(2), ADMIN(3), ASSU(4), BANQUE(5), BAT(6), CADRE(7), COMMER(8), COM(9), COMPTA(10), QUALITE(11), EDU(12), HORLO(13), HOTEL(14), HUMA(15), IMMO(
+	    16), INDUSTRIE(17), INF(18), JURI(19), LOGISTIC(20), MARKETING(21), MEDICAL(22), NEGOCE(23), SECURITE(24), RH(25), SERVICE(26), SOIN(27), TRAD(28), TRANS(
+	    29), VENTE(30);
 
 	/**
 	 * Id
@@ -23,6 +25,14 @@ public enum TypeProfessionEnum {
 	 * */
 	public Integer getId() {
 		return id;
+	}
+
+	public static void main(String[] args) {
+		final TypeProfessionEnum[] values = TypeProfessionEnum.values();
+		for (final TypeProfessionEnum typeProfessionEnum : values) {
+			System.out.println("INSERT INTO PROFESSION (idprofession, cdprofession) select " + typeProfessionEnum.getId() + ", '" + typeProfessionEnum.name()
+			    + "' from dual;");
+		}
 	}
 
 }
