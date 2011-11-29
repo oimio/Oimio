@@ -27,6 +27,24 @@ public enum TypeProfessionEnum {
 		return id;
 	}
 
+	/**
+	 * Retourne l'enum par id.
+	 * 
+	 * @param id
+	 *          - id de l'enum
+	 * @return TypeEnum si trouvé sinon null.
+	 */
+	public static TypeProfessionEnum getEnumById(Integer id) {
+		TypeProfessionEnum typeEnum = null;
+		for (final TypeProfessionEnum type : TypeProfessionEnum.values()) {
+			if (type.getId().equals(id)) {
+				typeEnum = type;
+				break;
+			}
+		}
+		return typeEnum;
+	}
+
 	public static void main(String[] args) {
 		final TypeProfessionEnum[] values = TypeProfessionEnum.values();
 		for (final TypeProfessionEnum typeProfessionEnum : values) {

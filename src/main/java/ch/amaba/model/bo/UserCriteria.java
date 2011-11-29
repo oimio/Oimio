@@ -5,11 +5,6 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-import ch.amaba.model.bo.constants.TypeInteretEnum;
-import ch.amaba.model.bo.constants.TypeMusiqueEnum;
-import ch.amaba.model.bo.constants.TypeProfessionEnum;
-import ch.amaba.model.bo.constants.TypeReligionEnum;
-
 public class UserCriteria implements Serializable {
 
 	/**
@@ -174,21 +169,21 @@ public class UserCriteria implements Serializable {
 	/**
 	 * Ajouter un nouveau filtre musique.
 	 * */
-	public void addMusique(TypeMusiqueEnum typeMusiqueEnum) {
+	public void addMusique(Integer id) {
 		if (idMusiques == null) {
 			idMusiques = new HashSet<Integer>();
 		}
-		idMusiques.add(typeMusiqueEnum.getId());
+		idMusiques.add(id);
 	}
 
 	/**
 	 * Ajouter un nouveau filtre intérêt.
 	 * */
-	public void addInteret(final TypeInteretEnum typeInteretEnum) {
+	public void addInteret(final Integer id) {
 		if (idInterets == null) {
 			idInterets = new HashSet<Integer>();
 		}
-		idInterets.add(typeInteretEnum.getId());
+		idInterets.add(id);
 	}
 
 	/**
@@ -204,21 +199,21 @@ public class UserCriteria implements Serializable {
 	/**
 	 * Ajouter un nouveau filtre religion.
 	 */
-	public void addReligion(final TypeReligionEnum typeReligionEnum) {
+	public void addReligion(final Integer id) {
 		if (idReligions == null) {
 			idReligions = new HashSet<Integer>();
 		}
-		idReligions.add(typeReligionEnum.getId());
+		idReligions.add(id);
 	}
 
 	/**
 	 * Ajouter un nouveau filtre profession.
 	 */
-	public void addProfession(final TypeProfessionEnum typeProfessionEnum) {
-		if (idReligions == null) {
-			idReligions = new HashSet<Integer>();
+	public void addProfession(final Integer id) {
+		if (idProfessions == null) {
+			idProfessions = new HashSet<Integer>();
 		}
-		idReligions.add(typeProfessionEnum.getId());
+		idProfessions.add(id);
 	}
 
 	public String getPassword() {
@@ -253,6 +248,23 @@ public class UserCriteria implements Serializable {
 			idCantons = new HashSet<Integer>();
 		}
 		idCantons.add(idCanton);
+	}
+
+	/**
+	 * Clear les properties interet, music, profession, religion et sport.
+	 * */
+	public void clearUserProperties() {
+		clearSet(idInterets);
+		clearSet(idSports);
+		clearSet(idProfessions);
+		clearSet(idMusiques);
+		clearSet(idReligions);
+	}
+
+	public void clearSet(Set<?> set) {
+		if (set != null) {
+			set.clear();
+		}
 	}
 
 }

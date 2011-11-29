@@ -44,4 +44,22 @@ public enum TypeMusiqueEnum {
 		return id;
 	}
 
+	/**
+	 * Retourne l'enum par id.
+	 * 
+	 * @param id
+	 *          - id de l'enum
+	 * @return TypeEnum si trouvé sinon null.
+	 */
+	public static TypeMusiqueEnum getEnumById(Integer id) {
+		TypeMusiqueEnum typeEnum = null;
+		for (final TypeMusiqueEnum type : TypeMusiqueEnum.values()) {
+			if (type.getId().equals(id)) {
+				typeEnum = type;
+				break;
+			}
+		}
+		return typeEnum;
+	}
+
 }

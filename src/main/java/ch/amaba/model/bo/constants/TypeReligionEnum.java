@@ -25,4 +25,22 @@ public enum TypeReligionEnum {
 		return id;
 	}
 
+	/**
+	 * Retourne l'enum par id.
+	 * 
+	 * @param id
+	 *          - id de l'enum
+	 * @return TypeEnum si trouvé sinon null.
+	 */
+	public static TypeReligionEnum getEnumById(Integer id) {
+		TypeReligionEnum typeEnum = null;
+		for (final TypeReligionEnum type : TypeReligionEnum.values()) {
+			if (type.getId().equals(id)) {
+				typeEnum = type;
+				break;
+			}
+		}
+		return typeEnum;
+	}
+
 }
