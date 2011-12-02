@@ -24,4 +24,22 @@ public enum TypeMessageStatutEnum {
 		return id;
 	}
 
+	/**
+	 * Retourne l'enum par son id. Null si pas trouvé.
+	 * 
+	 * @param id
+	 *          - l'id de l'enum recherché
+	 * @return l'enum correspondant à l'id. Null si pas trouvé.
+	 * */
+	public static TypeMessageStatutEnum getEnumById(Integer id) {
+		TypeMessageStatutEnum typeEnum = null;
+		for (final TypeMessageStatutEnum type : TypeMessageStatutEnum.values()) {
+			if (type.getId().equals(id)) {
+				typeEnum = type;
+				break;
+			}
+		}
+		return typeEnum;
+	}
+
 }

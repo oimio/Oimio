@@ -30,12 +30,12 @@ public enum TypeInteretEnum {
 	}
 
 	/**
-	 * Retourne l'enum par id.
+	 * Retourne l'enum par son id. Null si pas trouvé.
 	 * 
 	 * @param id
-	 *          - id de l'enum
-	 * @return TypeEnum si trouvé sinon null.
-	 */
+	 *          - l'id de l'enum recherché
+	 * @return l'enum correspondant à l'id. Null si pas trouvé.
+	 * */
 	public static TypeInteretEnum getEnumById(Integer id) {
 		TypeInteretEnum typeEnum = null;
 		for (final TypeInteretEnum type : TypeInteretEnum.values()) {

@@ -29,6 +29,7 @@ public class UserCriteria implements Serializable {
 	Set<Integer> idProfessions;
 	Set<Integer> idMusiques;
 	Set<Integer> idReligions;
+	Set<Integer> idCaracteres;
 	PhysiqueCriteria physiqueCriteria;
 	ProfileCriteria profileCriteria;
 
@@ -177,6 +178,16 @@ public class UserCriteria implements Serializable {
 	}
 
 	/**
+	 * Ajouter un nouveau filtre caractere.
+	 * */
+	public void addCaractere(Integer id) {
+		if (idCaracteres == null) {
+			idCaracteres = new HashSet<Integer>();
+		}
+		idCaracteres.add(id);
+	}
+
+	/**
 	 * Ajouter un nouveau filtre intérêt.
 	 * */
 	public void addInteret(final Integer id) {
@@ -259,12 +270,21 @@ public class UserCriteria implements Serializable {
 		clearSet(idProfessions);
 		clearSet(idMusiques);
 		clearSet(idReligions);
+		clearSet(idCaracteres);
 	}
 
 	public void clearSet(Set<?> set) {
 		if (set != null) {
 			set.clear();
 		}
+	}
+
+	public Set<Integer> getIdCaracteres() {
+		return idCaracteres;
+	}
+
+	public void setIdCaracteres(Set<Integer> idCaracteres) {
+		this.idCaracteres = idCaracteres;
 	}
 
 }

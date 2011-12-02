@@ -6,11 +6,11 @@ package ch.amaba.model.bo.constants;
 public enum TypeCaractereEnum {
 	DROLE(1), JOYEUX(2), TIMIDE(3), ORIGINIAL(4), DYNAMIQUE(5),
 
-	AUTORITAIRE(6), COLEREUX(7), AUDACIEUX(8), PATIENT(9), IMPATIENT(10),
+	AUTORIT(6), COLEREUX(7), AUDACIEUX(8), PATIENT(9), IMPATIENT(10),
 
-	TRAVAILLEUR(11), PARESSEUX(12), SOCIABLE(13), SOLITAIRE(14), CURIEUX(15),
+	TRAVAIL(11), PARESSEUX(12), SOCIABLE(13), SOLITAIRE(14), CURIEUX(15),
 
-	IMPULSIF(16), REFLECHI(17), TOLERANT(18);
+	IMPULSIF(16), REFLECHI(17), TOLERANT(18), AMBI(19);
 
 	/**
 	 * Id
@@ -32,12 +32,12 @@ public enum TypeCaractereEnum {
 	}
 
 	/**
-	 * Retourne l'enum par id.
+	 * Retourne l'enum par son id. Null si pas trouvé.
 	 * 
 	 * @param id
-	 *          - id de l'enum
-	 * @return TypeSportEnum si trouvé sinon null.
-	 */
+	 *          - l'id de l'enum recherché
+	 * @return l'enum correspondant à l'id. Null si pas trouvé.
+	 * */
 	public static TypeCaractereEnum getEnumById(Integer id) {
 		TypeCaractereEnum typeSportEnum = null;
 		for (final TypeCaractereEnum type : TypeCaractereEnum.values()) {

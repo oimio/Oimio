@@ -26,12 +26,12 @@ public enum TypeSportEnum {
 	}
 
 	/**
-	 * Retourne l'enum par id.
+	 * Retourne l'enum par son id. Null si pas trouvé.
 	 * 
 	 * @param id
-	 *          - id de l'enum
-	 * @return TypeSportEnum si trouvé sinon null.
-	 */
+	 *          - l'id de l'enum recherché
+	 * @return l'enum correspondant à l'id. Null si pas trouvé.
+	 * */
 	public static TypeSportEnum getEnumById(Integer id) {
 		TypeSportEnum typeSportEnum = null;
 		for (final TypeSportEnum type : TypeSportEnum.values()) {
