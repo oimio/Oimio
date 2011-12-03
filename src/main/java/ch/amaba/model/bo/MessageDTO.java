@@ -2,8 +2,6 @@ package ch.amaba.model.bo;
 
 import java.util.Date;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
-
 import ch.amaba.model.bo.constants.TypeMessageStatutEnum;
 
 /**
@@ -89,8 +87,8 @@ public class MessageDTO extends AbstractSignedDTO {
 
 	@Override
 	public String toString() {
-		return new ToStringBuilder(this).append("date", date).append("sujet", sujet).append("message", message).append("nomCorrespondant", nomCorrespondant)
-		    .append("prenomCorrespondant", prenomCorrespondant).append("idCorrespondant", idCorrespondant).toString();
+		return new StringBuffer().append("date=" + date).append("sujet=" + sujet).append("message=" + message).append("nomCorrespondant=" + nomCorrespondant)
+		    .append("prenomCorrespondant=" + prenomCorrespondant).append("idCorrespondant=" + idCorrespondant).toString();
 	}
 
 }
