@@ -32,6 +32,8 @@ public class UserCriteria implements Serializable {
 	Set<Integer> idCaracteres;
 	PhysiqueCriteria physiqueCriteria;
 	ProfileCriteria profileCriteria;
+	CoquinCriteria coquinCriteria;
+	Set<PhotoDTO> photos;
 
 	/**
 	 * For serialization.
@@ -287,4 +289,43 @@ public class UserCriteria implements Serializable {
 		this.idCaracteres = idCaracteres;
 	}
 
+	public Set<PhotoDTO> getPhotos() {
+		return photos;
+	}
+
+	public void setPhotos(Set<PhotoDTO> photos) {
+		this.photos = photos;
+	}
+
+	/**
+	 * Ajouter une nouvelle photo.
+	 */
+	public void addPhoto(final PhotoDTO photoDTO) {
+		if (photos == null) {
+			photos = new HashSet<PhotoDTO>();
+		}
+		photos.add(photoDTO);
+	}
+
+	/** Retourne l'url de la photo principale, null si pas trouvée. */
+	public String getPhotoPrincipaleFileName() {
+		String fileName = null;
+		if (photos != null) {
+			for (final PhotoDTO photoDTO : photos) {
+				if (photoDTO.isPrincipale()) {
+					fileName = photoDTO.getFileName();
+					break;
+				}
+			}
+		}
+		return fileName;
+	}
+
+	public CoquinCriteria getCoquinCriteria() {
+		return coquinCriteria;
+	}
+
+	public void setCoquinCriteria(CoquinCriteria coquinCriteria) {
+		this.coquinCriteria = coquinCriteria;
+	}
 }

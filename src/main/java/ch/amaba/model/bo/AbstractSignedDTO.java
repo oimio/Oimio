@@ -18,6 +18,8 @@ public abstract class AbstractSignedDTO implements Serializable {
 
 	private Date lastModificationDate;
 
+	private String statut;
+
 	public AbstractSignedDTO() {
 		super();
 	}
@@ -58,13 +60,10 @@ public abstract class AbstractSignedDTO implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result
-		    + ((businessObjectId == null) ? 0 : businessObjectId.hashCode());
-		result = prime * result
-		    + ((creationDate == null) ? 0 : creationDate.hashCode());
-		result = prime
-		    * result
-		    + ((lastModificationDate == null) ? 0 : lastModificationDate.hashCode());
+		result = prime * result + ((businessObjectId == null) ? 0 : businessObjectId.hashCode());
+		result = prime * result + ((creationDate == null) ? 0 : creationDate.hashCode());
+		result = prime * result + ((lastModificationDate == null) ? 0 : lastModificationDate.hashCode());
+		result = prime * result + ((statut == null) ? 0 : statut.hashCode());
 		result = prime * result + ((version == null) ? 0 : version.hashCode());
 		return result;
 	}
@@ -102,6 +101,13 @@ public abstract class AbstractSignedDTO implements Serializable {
 		} else if (!lastModificationDate.equals(other.lastModificationDate)) {
 			return false;
 		}
+		if (statut == null) {
+			if (other.statut != null) {
+				return false;
+			}
+		} else if (!statut.equals(other.statut)) {
+			return false;
+		}
 		if (version == null) {
 			if (other.version != null) {
 				return false;
@@ -110,6 +116,17 @@ public abstract class AbstractSignedDTO implements Serializable {
 			return false;
 		}
 		return true;
+	}
+
+	/**
+	 * Retourne le statut technique (actif ou supprimé).
+	 * */
+	public String getStatut() {
+		return statut;
+	}
+
+	public void setStatut(String statut) {
+		this.statut = statut;
 	}
 
 }
