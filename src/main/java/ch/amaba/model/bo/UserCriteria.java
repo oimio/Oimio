@@ -34,6 +34,7 @@ public class UserCriteria implements Serializable {
 	ProfileCriteria profileCriteria;
 	CoquinCriteria coquinCriteria;
 	Set<PhotoDTO> photos;
+	Set<AmiDTO> amis;
 
 	/**
 	 * For serialization.
@@ -328,4 +329,20 @@ public class UserCriteria implements Serializable {
 	public void setCoquinCriteria(CoquinCriteria coquinCriteria) {
 		this.coquinCriteria = coquinCriteria;
 	}
+
+	public void setAmis(Set<AmiDTO> amis) {
+		this.amis = amis;
+	}
+
+	public Set<AmiDTO> getAmis() {
+		return amis;
+	}
+
+	public void ajouterAmi(final AmiDTO ami) {
+		if (amis == null) {
+			amis = new HashSet<AmiDTO>();
+		}
+		amis.add(ami);
+	}
+
 }
